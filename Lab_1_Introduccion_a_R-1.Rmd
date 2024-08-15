@@ -69,7 +69,7 @@ A lo largo del siguiente documento podrá familiarizarse con el funcionamiento d
 Similar a otros lenguajes de programación, en **R** se pueden realizar operaciones matemáticas básicas. Por ejemplo (para ejecutar el código puede dar clic en el icono del triángulo verde en la esquina superior derecha de cada sección de código):
 
 ```{r}
-20+30
+20+90
 79-36
 100/4
 26*980

@@ -393,16 +393,24 @@ X<-matrix(c(1,2,3,1,4,6,2,-3,-5),ncol =3,nrow= 3)
   
 # determinante:
 determinante.X <- det(X)
-determinante.X
+print("Determinante: ")
+print(determinante.X)
 
 
 # diagonal:
-
+diagonal.X <- diag(X)
+print("Diagonal: ")
+print(diagonal.X)
 
 # transpuesta:
-
+transpuesta.X <- t(X)
+print("Transpuesta: ")
+print(transpuesta.X)
 
 # inversa 
+inversa.X <- solve(X)
+print("Inversa: ")
+print(inversa.X)
 
 
 ```
@@ -420,29 +428,36 @@ vector_3 <- c(11:31)
 
 # Agregue la concatenación de los vectores
 # cbind()
-
+matriz.columnas <- cbind(vector_1, vector_2, vector_3)
+print("Matriz por columnas: ")
+print(matriz.columnas)
 
 #rbind()
 
-
+matriz.filas <- rbind(vector_1, vector_2, vector_3)
+print("Matriz por filas: ")
+print(matriz.filas)
 ```
 
 b.  ¿Cuáles son las dimensiones de las matrices resultantes luego de aplicar ambas funciones de concatenación? Incluya el código usado para determinar las dimensiones de ambas matrices:
 
 ```{r}
 # matriz obtenida usando cbind()
-
+dimension.matrizc <- dim(matriz.columnas)
+print("Dimensión Matriz usando cbind")
+print(dimension.matrizc)
 
 # matrices obtenidas usando rbind()
-
-
+dimension.matrizf <- dim(matriz.filas)
+print("Dimensión Matriz usando rbind")
+print(dimension.matrizf)
 ```
 
 Respuesta:
 
--   Dimensión concatenando los vectores con cbind():
+-   Dimensión concatenando los vectores con cbind(): (21, 3)
 
--   Dimensión concatenando los vectores con rbind():
+-   Dimensión concatenando los vectores con rbind(): (3, 21)
 
 3.  Asignación de nombres a vectores y matrices
 
@@ -452,11 +467,24 @@ a.  Cree un objeto de nombre `temperaturas` y asigne 7 valores desde los 27 hast
 
 ```{r}
 
+temperaturas <- seq(27, 33, 1)
+
+names(temperaturas) <- c("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo")
+
+temperaturas
+
 ```
 
 b.  ¿Cuáles fueron las temperaturas para los días Lunes y sábado?:
 
 ```{r}
+print("Temperatura para Lunes")
+lunes <- temperaturas["Lunes"]
+print(lunes)
+
+print("Temperatura para Sabado")
+sabado <- temperaturas["Sabado"]
+print(sabado)
 
 ```
 
@@ -466,10 +494,14 @@ c.  La asignación de nombres también se puede realizar a las columnas y las fi
 rains<-c(0,5,6,0,2,3,7)
 
 # Creación de la matriz
-
+matriz.temp <- rbind(temperaturas, rains)
 
 #asignación de nombres
+colnames(matriz.temp) <- c("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo")
 
+rownames(matriz.temp) <- c("Temperaturas", "Lluvias")
+
+matriz.temp
 
 ```
 
@@ -487,16 +519,22 @@ a.  Los valores de la variable de respuesta `decrease` mayores a 50:
 
 ```{r}
 data("OrchardSprays")
+decrease.mayor.50 <- OrchardSprays$decrease[OrchardSprays$decrease > 50]
+decrease.mayor.50
 ```
 
 b.  Los valores de la variable de respuesta `decrease` menores a 70 y valores de la variable `rowpos` igual a 8:
 
 ```{r}
-
+data("OrchardSprays")
+decrease.70.rowpos.8 <- OrchardSprays[OrchardSprays$decrease > 70 & OrchardSprays$rowpos == 8, ]
+decrease.70.rowpos.8
 ```
 
 c.  Los valores correspondientes al tratamiento 'A':
 
 ```{r}
-
+data("OrchardSprays")
+tratamiento.A <- OrchardSprays$treatment[OrchardSprays$treatment == "A"]
+tratamiento.A
 ```

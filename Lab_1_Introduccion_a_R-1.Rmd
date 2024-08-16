@@ -69,7 +69,7 @@ A lo largo del siguiente documento podrá familiarizarse con el funcionamiento d
 Similar a otros lenguajes de programación, en **R** se pueden realizar operaciones matemáticas básicas. Por ejemplo (para ejecutar el código puede dar clic en el icono del triángulo verde en la esquina superior derecha de cada sección de código):
 
 ```{r}
-20+90
+20+30
 79-36
 100/4
 26*980
@@ -189,8 +189,9 @@ tiempo*2 + 20
 Existen otras formas de definir vectores si se desean crear con una formula, secuencia o repetición en específico. Puede explorar estas opciones con el siguiente código:
 
 ```{r}
-4:12
-rep(8,10)
+4:12 #vector inicio:final
+rep(8,10) #valor, frecuencia
+seq(0, 10, 2.5) "inico, fin, paso"
 rep(5, times=5)
 rep(c(3, -1, 0.5), times=3)
 rep(c(3, -1, 0.5), length.out=8)
@@ -368,12 +369,17 @@ Para cada uno de los ejercicios planteados deberá imprimir sus resultados. En o
 a.  Cree un vector de una secuencia de números pares del 0 al 100
 
 ```{r}
+num.pares <- seq(0, 100, 2)
+num.pares
 
 ```
 
 b.  Cree una matriz 3 X 5 que contenga todos los números consecutivos entre 16 y 30 por columnas:
 
 ```{r}
+num.consecutivos <- seq(16, 30)
+matriz.consecutivos <- matrix(data=num.consecutivos, nrow=3, ncol=5, byrow=FALSE)
+matriz.consecutivos
 
 ```
 
@@ -384,7 +390,10 @@ X<-matrix(c(1,2,3,1,4,6,2,-3,-5),ncol =3,nrow= 3)
 
 # Agregue las funciones:
 
+  
 # determinante:
+determinante.X <- det(X)
+determinante.X
 
 
 # diagonal:

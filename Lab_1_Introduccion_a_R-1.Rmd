@@ -208,7 +208,8 @@ estacion[2]
 También se pueden seleccionar varias posiciones usando la notación de vectores `c()` o el símbolo `:`:
 
 ```{r}
-estacion[c(1,2)]
+estacion
+estacion[c(2,4)]
 estacion[2:4]
 ```
 
@@ -368,32 +369,38 @@ Para cada uno de los ejercicios planteados deberá imprimir sus resultados. En o
 a.  Cree un vector de una secuencia de números pares del 0 al 100
 
 ```{r}
-
+vector_pares<-seq(0,100,2)
+vector_pares
 ```
 
 b.  Cree una matriz 3 X 5 que contenga todos los números consecutivos entre 16 y 30 por columnas:
 
 ```{r}
-
+matriz.16a30<-matrix(seq(16,30,1), nrow=3, ncol=5, byrow=TRUE  )
+matriz.16a30
 ```
 
 c.  Para la matriz X que se muestra en la siguiente sección de código, busque los comandos (`?` y `help`) y obtenga el determinate, la diagonal, la matriz transpuesta y la matriz inversa:
 
 ```{r}
 X<-matrix(c(1,2,3,1,4,6,2,-3,-5),ncol =3,nrow= 3)
-
+X
 # Agregue las funciones:
-
+??X
 # determinante:
-
+det.x<-det(X)
+det.x
 
 # diagonal:
-
-
+diag.x<-diag(X)
+diag.x
 # transpuesta:
-
-
+transp.x<-t(X)
+transp.x
 # inversa 
+inversa.x<-solve(X)
+inversa.x
+
 
 
 ```

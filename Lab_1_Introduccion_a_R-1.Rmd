@@ -189,8 +189,9 @@ tiempo*2 + 20
 Existen otras formas de definir vectores si se desean crear con una formula, secuencia o repetición en específico. Puede explorar estas opciones con el siguiente código:
 
 ```{r}
-4:12
-rep(8,10)
+4:12 #vector inicio:final
+rep(8,10) #valor, frecuencia
+seq(0, 10, 2.5) "inico, fin, paso"
 rep(5, times=5)
 rep(c(3, -1, 0.5), times=3)
 rep(c(3, -1, 0.5), length.out=8)
@@ -369,15 +370,28 @@ Para cada uno de los ejercicios planteados deberá imprimir sus resultados. En o
 a.  Cree un vector de una secuencia de números pares del 0 al 100
 
 ```{r}
+<<<<<<< HEAD
 vector_pares<-seq(0,100,2)
 vector_pares
+=======
+num.pares <- seq(0, 100, 2)
+num.pares
+
+>>>>>>> 06def93a01ac4121e8f21f5c82f304ed6dac9688
 ```
 
 b.  Cree una matriz 3 X 5 que contenga todos los números consecutivos entre 16 y 30 por columnas:
 
 ```{r}
+<<<<<<< HEAD
 matriz.16a30<-matrix(seq(16,30,1), nrow=3, ncol=5, byrow=TRUE  )
 matriz.16a30
+=======
+num.consecutivos <- seq(16, 30)
+matriz.consecutivos <- matrix(data=num.consecutivos, nrow=3, ncol=5, byrow=FALSE)
+matriz.consecutivos
+
+>>>>>>> 06def93a01ac4121e8f21f5c82f304ed6dac9688
 ```
 
 c.  Para la matriz X que se muestra en la siguiente sección de código, busque los comandos (`?` y `help`) y obtenga el determinate, la diagonal, la matriz transpuesta y la matriz inversa:
@@ -386,6 +400,7 @@ c.  Para la matriz X que se muestra en la siguiente sección de código, busque 
 X<-matrix(c(1,2,3,1,4,6,2,-3,-5),ncol =3,nrow= 3)
 X
 # Agregue las funciones:
+<<<<<<< HEAD
 ??X
 # determinante:
 det.x<-det(X)
@@ -401,6 +416,30 @@ transp.x
 inversa.x<-solve(X)
 inversa.x
 
+=======
+
+  
+# determinante:
+determinante.X <- det(X)
+print("Determinante: ")
+print(determinante.X)
+
+
+# diagonal:
+diagonal.X <- diag(X)
+print("Diagonal: ")
+print(diagonal.X)
+
+# transpuesta:
+transpuesta.X <- t(X)
+print("Transpuesta: ")
+print(transpuesta.X)
+
+# inversa 
+inversa.X <- solve(X)
+print("Inversa: ")
+print(inversa.X)
+>>>>>>> 06def93a01ac4121e8f21f5c82f304ed6dac9688
 
 
 ```
@@ -418,29 +457,36 @@ vector_3 <- c(11:31)
 
 # Agregue la concatenación de los vectores
 # cbind()
-
+matriz.columnas <- cbind(vector_1, vector_2, vector_3)
+print("Matriz por columnas: ")
+print(matriz.columnas)
 
 #rbind()
 
-
+matriz.filas <- rbind(vector_1, vector_2, vector_3)
+print("Matriz por filas: ")
+print(matriz.filas)
 ```
 
 b.  ¿Cuáles son las dimensiones de las matrices resultantes luego de aplicar ambas funciones de concatenación? Incluya el código usado para determinar las dimensiones de ambas matrices:
 
 ```{r}
 # matriz obtenida usando cbind()
-
+dimension.matrizc <- dim(matriz.columnas)
+print("Dimensión Matriz usando cbind")
+print(dimension.matrizc)
 
 # matrices obtenidas usando rbind()
-
-
+dimension.matrizf <- dim(matriz.filas)
+print("Dimensión Matriz usando rbind")
+print(dimension.matrizf)
 ```
 
 Respuesta:
 
--   Dimensión concatenando los vectores con cbind():
+-   Dimensión concatenando los vectores con cbind(): (21, 3)
 
--   Dimensión concatenando los vectores con rbind():
+-   Dimensión concatenando los vectores con rbind(): (3, 21)
 
 3.  Asignación de nombres a vectores y matrices
 
@@ -450,11 +496,24 @@ a.  Cree un objeto de nombre `temperaturas` y asigne 7 valores desde los 27 hast
 
 ```{r}
 
+temperaturas <- seq(27, 33, 1)
+
+names(temperaturas) <- c("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo")
+
+temperaturas
+
 ```
 
 b.  ¿Cuáles fueron las temperaturas para los días Lunes y sábado?:
 
 ```{r}
+print("Temperatura para Lunes")
+lunes <- temperaturas["Lunes"]
+print(lunes)
+
+print("Temperatura para Sabado")
+sabado <- temperaturas["Sabado"]
+print(sabado)
 
 ```
 
@@ -464,10 +523,14 @@ c.  La asignación de nombres también se puede realizar a las columnas y las fi
 rains<-c(0,5,6,0,2,3,7)
 
 # Creación de la matriz
-
+matriz.temp <- rbind(temperaturas, rains)
 
 #asignación de nombres
+colnames(matriz.temp) <- c("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo")
 
+rownames(matriz.temp) <- c("Temperaturas", "Lluvias")
+
+matriz.temp
 
 ```
 
@@ -485,16 +548,22 @@ a.  Los valores de la variable de respuesta `decrease` mayores a 50:
 
 ```{r}
 data("OrchardSprays")
+decrease.mayor.50 <- OrchardSprays$decrease[OrchardSprays$decrease > 50]
+decrease.mayor.50
 ```
 
 b.  Los valores de la variable de respuesta `decrease` menores a 70 y valores de la variable `rowpos` igual a 8:
 
 ```{r}
-
+data("OrchardSprays")
+decrease.70.rowpos.8 <- OrchardSprays[OrchardSprays$decrease > 70 & OrchardSprays$rowpos == 8, ]
+decrease.70.rowpos.8
 ```
 
 c.  Los valores correspondientes al tratamiento 'A':
 
 ```{r}
-
+data("OrchardSprays")
+tratamiento.A <- OrchardSprays$treatment[OrchardSprays$treatment == "A"]
+tratamiento.A
 ```

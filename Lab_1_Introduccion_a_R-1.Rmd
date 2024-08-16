@@ -370,28 +370,19 @@ Para cada uno de los ejercicios planteados deberá imprimir sus resultados. En o
 a.  Cree un vector de una secuencia de números pares del 0 al 100
 
 ```{r}
-<<<<<<< HEAD
+
 vector_pares<-seq(0,100,2)
 vector_pares
-=======
-num.pares <- seq(0, 100, 2)
-num.pares
 
->>>>>>> 06def93a01ac4121e8f21f5c82f304ed6dac9688
 ```
+
 
 b.  Cree una matriz 3 X 5 que contenga todos los números consecutivos entre 16 y 30 por columnas:
 
 ```{r}
-<<<<<<< HEAD
-matriz.16a30<-matrix(seq(16,30,1), nrow=3, ncol=5, byrow=TRUE  )
-matriz.16a30
-=======
 num.consecutivos <- seq(16, 30)
 matriz.consecutivos <- matrix(data=num.consecutivos, nrow=3, ncol=5, byrow=FALSE)
 matriz.consecutivos
-
->>>>>>> 06def93a01ac4121e8f21f5c82f304ed6dac9688
 ```
 
 c.  Para la matriz X que se muestra en la siguiente sección de código, busque los comandos (`?` y `help`) y obtenga el determinate, la diagonal, la matriz transpuesta y la matriz inversa:
@@ -400,25 +391,6 @@ c.  Para la matriz X que se muestra en la siguiente sección de código, busque 
 X<-matrix(c(1,2,3,1,4,6,2,-3,-5),ncol =3,nrow= 3)
 X
 # Agregue las funciones:
-<<<<<<< HEAD
-??X
-# determinante:
-det.x<-det(X)
-det.x
-
-# diagonal:
-diag.x<-diag(X)
-diag.x
-# transpuesta:
-transp.x<-t(X)
-transp.x
-# inversa 
-inversa.x<-solve(X)
-inversa.x
-
-=======
-
-  
 # determinante:
 determinante.X <- det(X)
 print("Determinante: ")
@@ -439,9 +411,6 @@ print(transpuesta.X)
 inversa.X <- solve(X)
 print("Inversa: ")
 print(inversa.X)
->>>>>>> 06def93a01ac4121e8f21f5c82f304ed6dac9688
-
-
 ```
 
 2.  Concatenación de vectores
